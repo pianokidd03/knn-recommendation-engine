@@ -1,5 +1,12 @@
-textFile = open('ydata-ymusic-user-artist-ratings-v1_0.txt', 'r')
+import re
+from sys import path
+
+textFile = open('ratings.txt', 'r')
+
 lines = textFile.readlines()
 
+pattern = re.compile('\t')
+
 for line in lines:
-    print(line)
+    row = line.split('\t', 2)
+    
